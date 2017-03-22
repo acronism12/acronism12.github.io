@@ -468,7 +468,7 @@ p {
   font-size: 18px;
   font-style: italic;
   font-weight: 600;
-  color: #FF0000;
+  color: #e67e22;
 }
 
 nav {
@@ -483,7 +483,6 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-
 }
 
 .logo {
@@ -501,16 +500,16 @@ ul {
   margin: 0px;
 }
 
+
 nav ul li {
   margin-left: 10px;
   padding-right: 10px;
   border-right: 1px solid #fff;
-
 }
-
 nav ul li:last-child {
   border-right: 0px;
 }
+
 
 .navlink {
   color: #fff;
@@ -520,8 +519,20 @@ nav ul li:last-child {
   color: #e67e22;
 }
 
+main {
+  display: flex;
+  position: relative;
+  padding: 0px 15px;
+  top: 35px;
+}
 
+aside {
+  flex: 1;
+}
 
+div {
+  flex: 3;
+}
 
 .highlight {
   color: gold;
