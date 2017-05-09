@@ -3,33 +3,75 @@
   <head>
     <meta charset="utf-8">
     <title>Keira Hodge Yoga</title>
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles.css"/>
-    <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
     <nav>
       <div class="logo">
-      Keira Hodge Yoga
+      <h1>KH Yoga</h1>
       </div>
       <ul>
-        <li><a class="navlink" href="index.html">Home</a></li>
-        <li><a class="navlink" href="blog.html">Blog</a></li>
-        <li><a class="navlink" href="classes.html">Classes</a></li>
-        <li><a class="navlink" href="gallery.html">Gallery</a></li>
-        <li><a class="navlink" href="about.html">About</a></li>
+        <li><a class="navlink" href="index.html">Classes</a></li>
+        <li><a class="navlink" href="asanas.html">Asanas</a></li>
+        <li><a class="navlink" href="classes.html">About</a></li>
       </ul>
     </nav>
-    <main>
-      <aside>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </aside>
-      <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <main class="panels">
+      <div class="panel">
+        <h2>Classes</h2>
       </div>
-      <aside>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </aside>
+      <div class="panel" id="asanaList">
+        <div class="selectorPane">
+          <h2>Asanas</h2>
+          <p>Choose Level
+          <select id="levelSelector">
+            <option>All</option>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+          </select></p>
+          <p>Choose Type
+          <select id="typeSelector">
+            <option>All</option>
+            <option>Standing</option>
+            <option>Sitting & Twisting</option>
+            <option>Lying on the back</option>
+            <option>Balances</option>
+            <option>Inverted</option>
+            <option>Backbends</option>
+            <option>Forward bends</option>
+            <option>Lying on the stomach</option>
+            <option>Breathing</option>
+          </select></p>
+        </div>
+        <div class="resultPane">
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th id="englishName">Name (click to sort)</th>
+                <th id="sanskritName">Sanskrit (click to sort)</th>
+                <th id="asanaType">Type</th>
+                <th id="asanaLevel">Level</th>
+              </tr>
+            </thead>
+            <tbody id="asanaRows">
+
+            </tbody>
+          </table>
+        </div>
+        <div class="imagePane">
+          <img>
+          </img>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>About</h2>
+      </div>
+
     </main>
 
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

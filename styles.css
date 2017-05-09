@@ -478,11 +478,16 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 35px;
+  height: auto;
   padding: 0px 15px;
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+main {
+  position: relative;
+  top: 100px;
 }
 
 .logo {
@@ -495,7 +500,7 @@ li {
 
 ul {
   display: inline-block;
-  list-style: url(*);
+  /*list-style: url(*);*/
   padding-left: 0px;
   margin: 0px;
 }
@@ -519,19 +524,16 @@ nav ul li:last-child {
   color: #e67e22;
 }
 
-main {
-  display: flex;
-  position: relative;
+.panels {
   padding: 0px 15px;
-  top: 35px;
 }
 
-aside {
-  flex: 1;
-}
 
-div {
-  flex: 3;
+.panel {
+  /*border-color: white;
+  border-width: 10px;
+  margin: auto;*/
+  background-color: lightgrey;
 }
 
 .highlight {
@@ -540,4 +542,38 @@ div {
 
 .highlight:hover {
   color: purple;
+}
+
+#englishName {
+  color: black;
+}
+#englishName:hover {
+  color: #16a085;
+  cursor: pointer;
+}
+#englishName:active {
+  color: #e67e22;
+}
+
+
+#sanskritName {
+  color: black;
+}
+#sanskritName:hover {
+  color: #16a085;
+  cursor: pointer;
+}
+#sanskritName:active {
+  color: #e67e22;
+}
+
+@media ( min-width: 720px ) {
+  .panels {
+    display: flex;
+  }
+
+  .panel {
+    flex: 1;
+  }
+
 }
