@@ -23635,7 +23635,7 @@ function sortByName( yogaAsanaObjects ) {
   let levelValue = levelSelector.value
   let filteredObjects = []
   for (object of yogaAsanaObjects) {
-    if ( (object.categories[0].title === typeValue || typeValue === "All") && (object.levels[0].title === levelValue || levelValue === "All") ){
+    if ( (object.categories[0].title.trim() === typeValue || typeValue === "All") && (object.levels[0].title === levelValue || levelValue === "All") ){
       filteredObjects.push( object )
     }
   }
@@ -23650,7 +23650,7 @@ function sortBySanskritName( yogaAsanaObjects ) {
   let levelValue = levelSelector.value
   let filteredObjects = []
   for (object of yogaAsanaObjects) {
-    if ( (object.categories[0].title === typeValue || typeValue === "All") && (object.levels[0].title === levelValue || levelValue === "All") ){
+    if ( (object.categories[0].title.trim() === typeValue || typeValue === "All") && (object.levels[0].title === levelValue || levelValue === "All") ){
       filteredObjects.push( object )
     }
   }
@@ -23665,12 +23665,51 @@ function filterAsanaList( filtervalue ) {
   let levelValue = levelSelector.value
   let filteredObjects = []
   for (object of yogaAsanaObjects) {
-    if ( (object.categories[0].title === typeValue || typeValue === "All") && (object.levels[0].title === levelValue || levelValue === "All") ){
+    if ( (object.categories[0].title.trim() === typeValue || typeValue === "All") && (object.levels[0].title === levelValue || levelValue === "All") ){
       filteredObjects.push( object )
     }
   displayAsanaList ( filteredObjects )
   }
 }
+
+function initMap(){
+  let edinburghLatLon = {lat: 55.951452, lng: -3.211045}
+  let map = new google.maps.Map(document.getElementById("mapPane"), {
+    zoom: 17,
+    center: edinburghLatLon
+  })
+  let marker1 = new google.maps.Marker({
+    position: edinburghLatLon,
+    map: map
+  })
+}
+
+function findPos(obj) {
+    var curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+    return [curtop - 100];
+    }
+}
+
+//**************************** Navbar *****************************************
+var classesLink = document.getElementById("classesLink")
+var asanasLink = document.getElementById("asanasLink")
+var aboutLink = document.getElementById("aboutLink")
+
+classesLink.addEventListener("click", function( event ) {
+  window.scroll(0,findPos(document.getElementById("Classes")));
+})
+
+asanasLink.addEventListener("click", function( event ) {
+  window.scroll(0,findPos(document.getElementById("asanaList")));
+})
+
+aboutLink.addEventListener("click", function( event ) {
+  window.scroll(0,findPos(document.getElementById("About")));
+})
 
 //********************* Column Sort Listeners *********************************
 let englishNameColumnHeader = document.getElementById( "englishName" )
@@ -23710,3 +23749,12 @@ let yogaAsanaObjects = yogaAPI.payload.objects
 var asanaLists = document.getElementById("asanaLists")
 
 displayAsanaList(yogaAsanaObjects)
+
+
+//client ID
+// 926614709227-o9boaiklsb5djlhr9ht8u4r31too23e6.apps.googleusercontent.com
+// 926614709227-nf72hii7h40a3cq8rm13g6uj2n3vldeq.apps.googleusercontent.com
+
+//client secret
+//p__kn2cVHIzBZrIF6VjdtOWG
+//DeV_cpBI0JhY8rMQqc1ApUnz

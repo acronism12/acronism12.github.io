@@ -12,14 +12,22 @@
       <h1>KH Yoga</h1>
       </div>
       <ul>
-        <li><a class="navlink" href="index.html">Classes</a></li>
-        <li><a class="navlink" href="asanas.html">Asanas</a></li>
-        <li><a class="navlink" href="classes.html">About</a></li>
+        <li id="classesLink" class="navlink">Classes</li>
+        <li id="asanasLink" class="navlink">Asanas</li>
+        <li id="aboutLink" class="navlink">About</li>
       </ul>
     </nav>
     <main class="panels">
-      <div class="panel">
-        <h2>Classes</h2>
+      <div class="panel" id="Classes">
+        <div class="Home">
+          <h2>Classes</h2>
+        </div>
+        <div id="calendarPane">
+        </div>
+        <div class="imagePane">
+          <img>
+          </img>
+        </div>
       </div>
       <div class="panel" id="asanaList">
         <div class="selectorPane">
@@ -42,7 +50,7 @@
             <option>Backbends</option>
             <option>Forward bends</option>
             <option>Lying on the stomach</option>
-            <option>Breathing</option>
+            <!-- <option>Breathing</option> -->
           </select></p>
         </div>
         <div class="resultPane">
@@ -66,12 +74,22 @@
           </img>
         </div>
       </div>
-      <div class="panel">
-        <h2>About</h2>
+      <div class="panel" id="About">
+        <div class="aboutPane">
+          <h2>About</h2>
+          <p>Location</p>
+        </div>
+        <div id="mapPane">
+        </div>
+        <div class="footerPane">
+          <p>OMH Therapies • 1a Randolph Crescent Edinburgh, EH3 7TH
+          </p>
+        </div>
       </div>
 
     </main>
 
     <script type="text/javascript" src="main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6f1PgfY0n4ZMid_yjqTPNFYUzZrWGHNQ&callback=initMap"></script>
   </body>
 </html>
