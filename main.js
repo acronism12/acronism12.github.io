@@ -23624,7 +23624,7 @@ function getAsanaImage( image, description ) {
   let imageTag = document.createElement("img")
   imageTag.src = domain + object.cover_thumbnail
   imageTag.alt = description
-  imageTag.width = 150
+  imageTag.width = 50
   // let imageTag = "<img width='100' src='" + flag +"'/>"
   //imageTag = flag
   return imageTag
@@ -23678,9 +23678,19 @@ function initMap(){
     zoom: 17,
     center: edinburghLatLon
   })
-  let marker1 = new google.maps.Marker({
+  let marker = new google.maps.Marker({
     position: edinburghLatLon,
-    map: map
+    map: map,
+    title: "KH Yoga",
+    label: "KH"
+  })
+  let contentString = "<p>KH Yoga,</p><p>OMH Therapies,</p><p>1a Randolf Crescent</p>"
+
+  let infowindow = new google.maps.InfoWindow({
+    content: contentString
+  })
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
   })
 }
 
