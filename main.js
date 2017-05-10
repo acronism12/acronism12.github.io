@@ -23695,12 +23695,13 @@ function initMap(){
 }
 
 function findPos(obj) {
+    let navVar = document.getElementById("navbar")
     var curtop = 0;
     if (obj.offsetParent) {
         do {
             curtop += obj.offsetTop;
         } while (obj = obj.offsetParent);
-    return [curtop - 100];
+    return [curtop - (navVar.offsetHeight)];
     }
 }
 
